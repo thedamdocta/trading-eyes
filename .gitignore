@@ -1,0 +1,16 @@
+.env
+run/
+*.jsonl
+*.jsonl.bak*
+__pycache__/
+*.pyc
+.fx_plan
+.btc_plan
+levels*.json
+paper_state.json
+memory/compactions/*
+!memory/compactions/.gitkeep
+memory/_SESSION_LOG.md
+MANDATE.md
+skills/vision/.venv*
+skills/vision/__pycache__/

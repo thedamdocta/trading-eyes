@@ -1,0 +1,23 @@
+{
+  "hooks": {
+    "SessionStart": [
+      {"matcher": "", "hooks": [
+        {"type": "command", "command": "__REPO__/hooks/lessons-inject.sh"},
+        {"type": "command", "command": "__REPO__/hooks/compaction-gate-check.sh"}
+      ]}
+    ],
+    "PreCompact": [
+      {"matcher": "", "hooks": [
+        {"type": "command", "command": "__REPO__/hooks/compaction-gate-set.sh"}
+      ]}
+    ]
+  },
+  "permissions": {
+    "allow": [
+      "Bash(python3 \"__REPO__/desk/fx_execute.py\":*)",
+      "Bash(python3 \"__REPO__/desk/structure.py\":*)",
+      "Bash(python3 \"__REPO__/desk/call.py\":*)",
+      "Bash(python3 \"__REPO__/desk/coil_log.py\":*)"
+    ]
+  }
+}

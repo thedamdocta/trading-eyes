@@ -17,7 +17,8 @@ If `MANDATE.md` does not exist, interview your user and write it. Ask:
    fifty times without pain. Every stop is sized to this.
 3. **Pairs / instruments** — which to scan and trade.
 4. **Position limit** — default: one position at a time.
-5. **Session window** — when is the trading day over? Default: no new entries
+5. **Session window & timezone** — ask their timezone; write their local
+   times AND the ET equivalents into MANDATE.md. Default: no new entries
    after 16:30 ET, flat by 17:00 ET (the rollover). When are THEY reachable?
 6. **Reporting cadence** — default: 5-minute summaries flat, 1-minute bars in
    a trade, fills/closes announced immediately.

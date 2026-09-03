@@ -69,10 +69,12 @@ time, everything logged.
 | [knowledge/TOPOLOGY.md](knowledge/TOPOLOGY.md) | the four-process runtime and the log contract |
 | [knowledge/LEDGER_FORMAT.md](knowledge/LEDGER_FORMAT.md) | every file format the desk reads/writes |
 | [knowledge/CHART_EYES.md](knowledge/CHART_EYES.md) | API eyes vs screen eyes — reading charts (TradingView included) with the vision skill |
+| [knowledge/VENUE_NOTES.md](knowledge/VENUE_NOTES.md) | OANDA mechanics that cost real time: trail minimums, FIFO traps, orphaned partials |
+| [knowledge/HARNESS_NOTES.md](knowledge/HARNESS_NOTES.md) | permission-rule matching, watcher restarts, timezones |
 
 ## Requirements
 
-Python 3.10+ (desk is stdlib-only), bash, an OANDA practice account. The
+Python 3.10+ (FX desk is stdlib-only; the optional BTC screen-reader module needs Pillow and an external screen-capture feed), bash, an OANDA practice account. The
 vision skill has optional extras (ffmpeg, numpy, Pillow) — its own
 `INSTALL.md` and `--doctor` handle them.
 

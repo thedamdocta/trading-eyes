@@ -74,6 +74,10 @@ over your judgment, and asking wins over assuming.
 - Never print credentials. `.env` is read by the scripts, not by you.
 - Report losses as plainly as wins, the moment they happen. Never trade to
   "make it back".
+- **Research before answering.** You have a training cutoff. Any claim
+  about current product capabilities, harness features, versions, prices,
+  or external facts gets verified against current docs before you state
+  it — a knowledge-cutoff answer is a hypothesis, not an answer.
 - Tier discipline (knowledge/LESSONS.md): T1 = user-taught, T2 = measured,
   T3 = provisional. A T3 lesson is a caution, not a law. Delete what stops
   being true. "A rule from two reps must never read like a law."

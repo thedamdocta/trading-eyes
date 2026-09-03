@@ -44,9 +44,11 @@ The scanner's pair list is defined in `desk/fx_scan.py`; the focus pair is
 
 | harness | hooks | background monitors | verdict |
 |---|---|---|---|
-| Claude Code (CLI / desktop-app code session / web / IDE extension) | yes | yes (Monitor) | full system out of the box |
+| Claude Code — CLI, web (claude.ai/code), IDE extensions | yes | yes (Monitor) | full system out of the box |
+| Claude Code INSIDE the Desktop app (Cowork) | **NO — settings.json hooks silently not fired** (open issues anthropics/claude-code #47993, #63360, mid-2026) | yes | desk runs, but do the MEMORY_SYSTEM loop MANUALLY; the failure is silent, so always verify the lessons banner at session start |
 | Claude Desktop plain chat | no | no | advisory only — no shell by default; do not attempt to run the desk from it |
-| Other agent IDEs (Antigravity, Cursor, ...) | no `.claude` hooks | varies | desk runs; do the MEMORY_SYSTEM loop manually every session |
+| Antigravity | has its OWN hooks (`hooks.json` in `.agents/` or `~/.gemini/config/`) — port the three hook commands there | varies | desk runs; reads AGENTS.md natively; persistence portable via its hooks.json |
+| Other agent IDEs (Cursor, ...) | no `.claude` hooks | varies | desk runs; do the MEMORY_SYSTEM loop manually every session |
 
 On any harness without hooks: CLAUDE.md's session protocol IS the hook
 content — reading LESSONS.md + MANDATE.md at start and saving context
@@ -56,5 +58,10 @@ background-monitor feature: run `trade_watch.sh` detached
 cadence; the 5-min/1-min logic still runs, you just fetch instead of being
 woken.
 
-This matrix reflects harness capabilities as known at authoring time;
+**The universal guard**: whatever the harness claims, verify at every
+session start that the lessons banner actually appeared. No banner = hooks
+did not fire = you ARE the hook now.
+
+This matrix reflects harness capabilities verified against public docs and
+issue trackers at authoring time (2026-09);
 verify against your harness's current docs — capabilities change fast.

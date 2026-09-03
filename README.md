@@ -68,6 +68,7 @@ time, everything logged.
 | [knowledge/CASE_STUDIES.md](knowledge/CASE_STUDIES.md) | the 11 trades and the declines that taught the system |
 | [knowledge/TOPOLOGY.md](knowledge/TOPOLOGY.md) | the four-process runtime and the log contract |
 | [knowledge/LEDGER_FORMAT.md](knowledge/LEDGER_FORMAT.md) | every file format the desk reads/writes |
+| [knowledge/CHART_EYES.md](knowledge/CHART_EYES.md) | API eyes vs screen eyes — reading charts (TradingView included) with the vision skill |
 
 ## Requirements
 

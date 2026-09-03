@@ -39,3 +39,22 @@ stating any time, deadline, or countdown.
 
 The scanner's pair list is defined in `desk/fx_scan.py`; the focus pair is
 `desk-up.sh`'s first argument. Change both to match the mandate's pairs.
+
+## Harness support matrix
+
+| harness | hooks | background monitors | verdict |
+|---|---|---|---|
+| Claude Code (CLI / desktop-app code session / web / IDE extension) | yes | yes (Monitor) | full system out of the box |
+| Claude Desktop plain chat | no | no | advisory only — no shell by default; do not attempt to run the desk from it |
+| Other agent IDEs (Antigravity, Cursor, ...) | no `.claude` hooks | varies | desk runs; do the MEMORY_SYSTEM loop manually every session |
+
+On any harness without hooks: CLAUDE.md's session protocol IS the hook
+content — reading LESSONS.md + MANDATE.md at start and saving context
+summaries is done by you, not for you. On any harness without a
+background-monitor feature: run `trade_watch.sh` detached
+(`nohup ... >> run/watch.log &`) and poll `run/watch.log` on your reporting
+cadence; the 5-min/1-min logic still runs, you just fetch instead of being
+woken.
+
+This matrix reflects harness capabilities as known at authoring time;
+verify against your harness's current docs — capabilities change fast.

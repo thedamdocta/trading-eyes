@@ -30,7 +30,7 @@ scars.
 ## Quickstart
 
 ```bash
-git clone https://github.com/YOURNAME/trading-eyes && cd trading-eyes
+git clone https://github.com/thedamdocta/trading-eyes && cd trading-eyes
 ./install.sh          # wires hooks + safe permissions, creates .env
 # fill .env with OANDA PRACTICE credentials (free account at oanda.com)
 ./doctor.sh           # verifies venue, feeds, config
@@ -80,5 +80,5 @@ Python 3.10+ (FX desk is stdlib-only; the optional BTC screen-reader module need
 vision skill has optional extras (ffmpeg, numpy, Pillow) — its own
 `INSTALL.md` and `--doctor` handle them.
 
-MIT license. Trade safe: this is a practice-account learning system, not
+Built for Claude Code (hooks + background monitors give the full experience); other agent harnesses are supported via AGENTS.md and the harness matrix in knowledge/HARNESS_NOTES.md. MIT license. Trade safe: this is a practice-account learning system, not
 financial advice, and past measurements are not future returns.

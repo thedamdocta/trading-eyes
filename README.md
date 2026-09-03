@@ -34,6 +34,7 @@ git clone https://github.com/YOURNAME/trading-eyes && cd trading-eyes
 ./install.sh          # wires hooks + safe permissions, creates .env
 # fill .env with OANDA PRACTICE credentials (free account at oanda.com)
 ./doctor.sh           # verifies venue, feeds, config
+# IMPORTANT: open a NEW agent session after install — hooks load at session start
 # open your agent (e.g. Claude Code) in this directory:
 #   it reads CLAUDE.md, interviews YOU for your mandate, then runs the desk
 ./desk-up.sh          # start the feeds; the agent arms its watchers
@@ -71,6 +72,7 @@ time, everything logged.
 | [knowledge/CHART_EYES.md](knowledge/CHART_EYES.md) | API eyes vs screen eyes — reading charts (TradingView included) with the vision skill |
 | [knowledge/VENUE_NOTES.md](knowledge/VENUE_NOTES.md) | OANDA mechanics that cost real time: trail minimums, FIFO traps, orphaned partials |
 | [knowledge/HARNESS_NOTES.md](knowledge/HARNESS_NOTES.md) | permission-rule matching, watcher restarts, timezones |
+| [knowledge/MEMORY_SYSTEM.md](knowledge/MEMORY_SYSTEM.md) | the persistence loop: hooks, compaction gate, session logs, living lessons |
 
 ## Requirements
 

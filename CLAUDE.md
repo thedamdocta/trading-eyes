@@ -32,7 +32,8 @@ over your judgment, and asking wins over assuming.
 ## Session start protocol (every session)
 
 1. Read `MANDATE.md`, `knowledge/LESSONS.md`, and the last entries of
-   `memory/_SESSION_LOG.md`.
+   `memory/_SESSION_LOG.md`. (How persistence works: `knowledge/MEMORY_SYSTEM.md` —
+   you are the custodian of that loop.)
 2. If a compaction summary opens the conversation, save it to
    `memory/compactions/` BEFORE any other work (the hooks enforce this).
 3. `python3 desk/fx_execute.py positions` — **the venue is the only truth**

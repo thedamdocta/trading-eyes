@@ -32,8 +32,10 @@ are not running.
 All session references in this repo (Tokyo 20:00, London 03:00, NY 08:00,
 dead hour 17:00, flat-by-17:00) are US Eastern Time. At onboarding, ask
 your user's timezone and write both their local times AND the ET
-equivalents into MANDATE.md. Never estimate the clock — run `date` before
-stating any time, deadline, or countdown.
+equivalents into MANDATE.md. Never estimate the clock — run `date` before stating any time, deadline,
+or countdown — and that includes the WEEKDAY: a session that assumes the
+day mis-prices volume expectations (a Friday afternoon near the weekly
+close trades nothing like a Thursday; learned live, 2026-09-04).
 
 ## Pair basket
 

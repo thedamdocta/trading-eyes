@@ -78,9 +78,27 @@ time, everything logged.
 
 ## Requirements
 
-Python 3.10+ (FX desk is stdlib-only; the optional BTC screen-reader module needs Pillow and an external screen-capture feed), bash, an OANDA practice account. The
-vision skill has optional extras (ffmpeg, numpy, Pillow) — its own
-`INSTALL.md` and `--doctor` handle them.
+### Observation from Codex or another agent
+
+The portable entry point is [skills/trading-eyes/SKILL.md](skills/trading-eyes/SKILL.md).
+For an observation-only dependency check (no credentials or account requests):
+
+```bash
+python3 desk/eyes_status.py
+python3 desk/eyes_status.py --capture-dir /path/to/vision-session
+```
+
+The second command checks segment freshness and decoding, returning nonzero for
+missing, stale, or broken captures. It does not certify that the chart content is
+live or that trading is ready. Inspect multiple frames to verify that separately.
+Vision can be bundled in `skills/vision`, installed under Codex, `.agents`, or
+Claude, or selected explicitly with `VISION_SKILL_DIR`. `doctor.sh` checks the
+full FX desk; set `TRADING_EYES_CAPTURE_DIR` if its capture ring is outside `run/`.
+
+Python 3.10+, bash, and an OANDA practice account for the FX execution tools.
+The FX and BTC screen readers also need the Vision skill, Pillow, ffmpeg, and
+an external screen-capture feed. Vision's `INSTALL.md` and `--doctor` describe
+its required and optional dependencies; browser capture also needs agent-browser.
 
 Built for Claude Code (hooks + background monitors give the full experience); other agent harnesses are supported via AGENTS.md and the harness matrix in knowledge/HARNESS_NOTES.md. MIT license. Trade safe: this is a practice-account learning system, not
 financial advice, and past measurements are not future returns.

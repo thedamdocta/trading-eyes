@@ -40,7 +40,30 @@ prefer the API number whenever both exist.
 
 ## The rule of thumb
 
-If the question is about PRICE STRUCTURE → API eyes, always.
-If the question is about WHAT A PAGE SHOWS → screen eyes, calibrated.
-If both could answer → API. The chart is a rendering of the data; go to
-the data.
+Flat, reading structure (the M15/M5/M1 stack, levels, volume history) →
+API eyes: exact numbers, one call per read, no loop.
+What a page shows → screen eyes, calibrated.
+
+## In a trade, the screen eyes are primary — not optional (learned live, 2026-09-06)
+
+A closed candle is a bar late. The API poller that stood in for the eyes on
+one live trade read closed 1-minute bars every 30 seconds and never saw the
+exit bar — a heavy rejection wick that closed near its open. The human
+watching the chart saw it print and called it two bars ahead of the agent.
+Result: a winning entry given back to a scratch. The user's ruling: **if the
+eyes are not live on the chart while the trade is on, you will lose every
+trade — this is why they were built.**
+
+So, for the life of every trade:
+
+- `browser_watch.py` on the instrument's chart (or its validated spot proxy)
+  at ~2-second captures, and `btc_desk.py` / `fx_desk.py` reading the ring:
+  price every ~4s, the legend's live OHLC every ~12s, the candle named while
+  it is still printing, intra-bar level alerts from `levels.json`.
+- **Check the capture ring at every session start, for every lane that
+  could trade** — newest segment under 30 seconds old. An empty ring means
+  the eyes are dark; no order goes in until they are back. Your user should
+  never be the one to tell you the feed is down.
+- The API is a budget, not a feed: one volume call per minute, position and
+  order checks no faster than every 60 seconds, no candle-polling loops.
+  A venue can cut off a key that hammers it; the eyes cost the venue nothing.

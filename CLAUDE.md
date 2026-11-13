@@ -41,22 +41,33 @@ over your judgment, and asking wins over assuming.
 4. Bring up the desk if it is not running: `./desk-up.sh` (feeds first, then
    watcher, then coil logger — see `knowledge/TOPOLOGY.md`). Verify with
    `./doctor.sh`.
-5. Only now respond to your user.
+5. **Verify the eyes, per lane.** For every instrument that could trade
+   this session: the capture ring (`run/<lane>/buffer/`) has a segment
+   under 30 seconds old, and the desk reader (`btc_desk.py` / `fx_desk.py`)
+   is printing bars with reads, not BLIND. An empty or stale ring means the
+   eyes are dark — that lane does not trade until they are back. Your user
+   will never tell you the feed is down; finding it is your job.
+6. Only now respond to your user.
 
 ## The recipe (full detail: knowledge/STRATEGY.md)
 
 - **Read the stack**: `python3 desk/structure.py PAIR` → M15 tide / M5 wave /
   M1 moment. No M15 tide = no trade. A printing leg is never entered — the
   completed pullback after it is.
-- **Entry**: when M15 declares a tide AND an M5 pullback completes with M1
-  stalling on fading volume — limit order AT the measured stall level, not
-  deeper, not chasing.
+- **Entry**: when M15 declares a tide AND the pullback reaches a level AND an
+  M1 rejection bar plus a confirmation bar have PRINTED there — limit order at
+  the rejection bar's edge, not deeper, not chasing. Do not pre-position at a
+  stall: live, that went 0W/4L against 2W/0L after the print
+  (knowledge/FIELD_NOTES.md).
 - **Stop**: above/below the pullback's REAL extreme (the spike high/low, not
   inside the wick), sized so stop distance × units = the mandate's risk unit.
-- **Exits are mechanical**: partial (half) at +1R via the `.fx_plan` file
-  (side field = the side of the PARTIAL ORDER: `buy` for a short, `sell` for
-  a long — see knowledge/LEDGER_FORMAT.md), OANDA-managed trailing stop at 1R
-  on the rest, hard stop always. No hand exits while the structure holds.
+- **Exits are mechanical**: partial (half) at +1R, rested as a limit order
+  right after the fill (`limitsell` / `limitbuy`). The polled `.fx_plan` file
+  is the fallback and has missed a touch live; its side field = the side of
+  the PARTIAL ORDER: `buy` for a short, `sell` for a long — see
+  knowledge/LEDGER_FORMAT.md. OANDA-managed trailing stop at the stop
+  distance on the rest, hard stop always. No hand exits while the structure
+  holds.
 - **Cancel** a resting limit the moment its premise dies (tide gone, level
   stale, two legs printed since measurement). The move leaving without you
   costs nothing; a fill on a dead premise costs 1R.
@@ -66,6 +77,13 @@ over your judgment, and asking wins over assuming.
 
 ## Hard rules (not yours to override)
 
+- **The eyes are required for every trade. The whole system is built on
+  them.** For the life of every position: `browser_watch` on the live chart,
+  the desk reader on its ring, a monitor on the reader's log, `levels.json`
+  armed. An API poller reading closed candles is not a substitute — it is a
+  bar late, blind to the wick while it prints, and a rate-limit risk. No
+  eyes, no order. (`knowledge/CHART_EYES.md` has the one trade that taught
+  this.)
 - Risk per trade = the mandate's risk unit. Never average down, never add to
   a loser, never widen a stop.
 - One position at a time unless the mandate says otherwise.

@@ -13,8 +13,8 @@ move. TradingView is a REFERENCE for decisions, never a fill price.
 import json, re, subprocess, sys, time
 from pathlib import Path
 
-sys.path.insert(0, str(Path.home() / ".claude/skills/vision/scripts"))
-import ocr_engine as ocre
+from vision_runtime import load_ocr
+ocre = load_ocr()
 from PIL import Image
 
 BUF = Path(__file__).resolve().parent.parent / "run" / "cbdesk"

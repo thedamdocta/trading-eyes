@@ -15,8 +15,8 @@ Usage:  python3 fx_desk.py USD_JPY <capture_dir>
 import json, re, subprocess, sys, time
 from pathlib import Path
 
-sys.path.insert(0, str(Path.home() / ".claude/skills/vision/scripts"))
-import ocr_engine as ocre
+from vision_runtime import load_ocr
+ocre = load_ocr()
 from PIL import Image
 
 OUT = Path(__file__).resolve().parent

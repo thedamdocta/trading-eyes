@@ -4,6 +4,10 @@ Eleven closed practice trades under the full stack, anonymized. Risk was a
 fixed ~1R dollar unit per trade; pips are weighted per position (partial and
 runner averaged). Net: **+36.3 pips, 7W/4L; winners averaged 2.4× losers.**
 
+What happened after the practice phase, live and demo, is in
+[WINNING_TRADES.md](WINNING_TRADES.md) (every winner, with the full
+record) and [FIELD_NOTES.md](FIELD_NOTES.md) (how the method changed).
+
 | # | context | result | lesson |
 |---|---|---|---|
 | 1 | GBP_USD short, fresh M15 down-leg, early entry | +5.3p W | fresh legs pay |

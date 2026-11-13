@@ -1,5 +1,15 @@
 # The Elliott Stack — tide, wave, moment
 
+> **Update, September 2026.** Live trading changed two things on this page.
+> (1) The entry: do not pre-position at a stall. Wait for a rejection bar
+> and then a confirmation bar to print at the level, and place the limit at
+> the rejection bar's edge. On the first live day, pre-positioned entries
+> went 0W/4L and entries after a printed rejection went 2W/0L. (2) The
+> evidence: a mechanical replay of the entry over 253 out-of-sample setups
+> averaged −0.24R per trade. [FIELD_NOTES.md](FIELD_NOTES.md) has the
+> recipe as it finally stood and how it got there.
+> [WINNING_TRADES.md](WINNING_TRADES.md) has the record.
+
 The core read is three timeframes of the same wave logic (`desk/structure.py`):
 
 | layer | TF | question | phases |

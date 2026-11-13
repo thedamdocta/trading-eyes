@@ -4,6 +4,17 @@ The measured finding that started everything (n=16 early trades, scored by
 direction only): **direction was mostly right; the P&L leaked through exits.**
 Everything here exists to plug that leak.
 
+> **Update, September 2026.** Three corrections from live trading.
+> (1) Rest the +1R partial as a limit order on the book right after the
+> fill: the polled `.fx_plan` missed a touch that a resting limit would
+> have filled. (2) Pass the stop distance as the trail distance. The venue
+> trail arms at the fill, so a broker-minimum trail inside the stop becomes
+> the stop. (3) Keep the stop attached at the venue and do not exit by
+> hand in fast tape: 4.6 pips of slippage by hand against about 0 with the
+> venue stop. The demo phase later ran without a partial or a trail and
+> exited on the agent's read instead. Both are described in
+> [FIELD_NOTES.md](FIELD_NOTES.md).
+
 ## The structure
 
 1. **Partial at +1R** — half the position, banked mechanically via `.fx_plan`

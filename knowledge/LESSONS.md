@@ -52,3 +52,37 @@ size and that stop AND trail are non-None.
 `positions` on the venue decides what you hold. Not your memory, not the
 log, not the last message. Check it at session start and after every fill,
 close, and doubt.
+
+## THE REJECTION PRINTS BEFORE THE ORDER — T1 + T2 (first live day)
+Limits pre-positioned at a stall went 0W/4L; entries after a rejection bar
+AND a confirmation bar had printed went 2W/0L. Flags, pennants, triangles
+and channels are not stalls: a flat lid with rising lows resolves up. Wait
+for both bars, then put the limit at the rejection bar's edge.
+
+## REST THE +1R PARTIAL AT THE FILL — T2 (n=4 live)
+The polled plan file missed a touch of the target that a resting limit
+would have filled. Place the partial as a resting limit right after the
+fill. Cancel it if the stop takes the whole position.
+
+## THE TRAIL IS AT LEAST THE STOP DISTANCE — T2 (two live losses)
+The venue trail arms at the fill. A broker-minimum trail inside the stop
+IS the stop (−0.8R in 37 seconds). Pass the stop distance as the trail.
+
+## DEPTH FROM THE VENUE EXTREME; STOP AT THE VENUE — T2
+A pullback read 46% from minute closes and 73% from the real low. Measure
+from the extreme. Attach the stop to the entry at the venue: a hand exit
+slipped 4.6p in event tape, the venue stop about 0p (n=1 each).
+
+## THE SPREAD IS A COST, NOT A WALL — T1
+Spread ≤ 25% of the stop distance, hard cap 2.5p. A fixed 1.5p ceiling
+shut out the whole Tokyo session.
+
+## A CLIMAX VETOES THE FIRST PULLBACK, NOT THE NIGHT — T1
+Skip the first pullback after a climax bar, a deep one (past ~half the
+leg), and one where the tide has not re-declared. Otherwise the recipe
+fires as usual.
+
+## THE RECIPE AS CODED HAS NO MEASURED EDGE — T2 (253 out-of-sample setups)
+A mechanical replay averaged −0.24R per trade, and no filter or chart-read
+rescued it. Treat every entry as a forward test at the smallest size. The
+full account is in FIELD_NOTES.md; the record is in WINNING_TRADES.md.

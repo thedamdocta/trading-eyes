@@ -67,6 +67,8 @@ time, everything logged.
 | [knowledge/EXITS.md](knowledge/EXITS.md) | partial +1R, venue trail, hard stop — and the replay that proved it |
 | [knowledge/LESSONS.md](knowledge/LESSONS.md) | the living lessons doc, tiered by evidence |
 | [knowledge/CASE_STUDIES.md](knowledge/CASE_STUDIES.md) | the 11 trades and the declines that taught the system |
+| [knowledge/WINNING_TRADES.md](knowledge/WINNING_TRADES.md) | every winning trade after going live, how each was made, and the full record they come from |
+| [knowledge/FIELD_NOTES.md](knowledge/FIELD_NOTES.md) | how the desk traded live and on demo, phase by phase: the final recipe, the notes, and what did not hold up |
 | [knowledge/TOPOLOGY.md](knowledge/TOPOLOGY.md) | the four-process runtime and the log contract |
 | [knowledge/LEDGER_FORMAT.md](knowledge/LEDGER_FORMAT.md) | every file format the desk reads/writes |
 | [knowledge/CHART_EYES.md](knowledge/CHART_EYES.md) | API eyes vs screen eyes — reading charts (TradingView included) with the vision skill |
